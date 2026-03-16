@@ -1,65 +1,210 @@
 import Image from "next/image";
+import { features } from "./contents";
+import { LocationMap } from "./_components/maps/location_map";
+import { Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
+import { DottedSquare } from "./_components/layout/dottedSquare";
+
+import truckImg from "@/app/_assets/truck.webp";
+import engineerImg from "@/app/_assets/engineer.webp";
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <main className="bg-sky-900 text-background" id="inicio">
+            <section className="relative z-0 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/img5.webp" alt="alt" height={1600} width={1200} />
+                </div>
+                <div className="absolute inset-0 z-10 h-full w-full bg-linear-to-r from-sky-500 from-25% via-sky-500/60 via-80% to-sky-500/0 to-100%">
+                </div>
+                <div className="relative z-20 aspect-3/4 px-6 py-24 space-y-8 -rotate-2 xs:px-12 xs:space-y-8 sm:px-16 sm:py-32 md:py-40 md:space-y-12 lg:px-24 lg:pt-72 lg:pb-120 lg:aspect-auto">
+                    <h1 className="flex flex-col gap-2 text-background text-5xl xs:text-6xl uppercase font-bold lg:max-w-[75%]">
+                        <span>Construye tu proximo desarrollo</span>
+                        <span className="text-xl font-bold uppercase bg-blue-950 mx-auto px-2 py-px xs:text-2xl">en este terreno</span>
+                    </h1>
+                    <p className="max-w-[85%] text-current/95 text-sm text-justify font-extrabold xs:text-base md:text-lg lg:max-w-[75%]">
+                        Aprovecha esta única oportunidad estratégica para el
+                        desarrollo de vivienda en una zona en crecimiento urbana
+                        de Mazatlán, Sinaloa.
+                    </p>
+                </div>
+            </section>
+            <section className="bg-linear-to-b from-slate-950/0 to-slate-950 overflow-hidden">
+                <div className="relative z-0">
+                    <div className="relative">
+                        <Image src="/img6.webp" alt="alt" width={1600} height={900} />
+                        <div className="absolute -bottom-10 z-10 px-6 xs:-bottom-12 sm:-bottom-14 md:-bottom-16 lg:-bottom-18 lg:px-12">
+                            <h2 className="flex flex-col text-3xl font-black uppercase text-border leading-tight xs:text-4xl sm:text-5xl lg:text-6xl">
+                                <span className="text-green-500">Información</span>
+                                <span className="text-neutral-50">general</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="relative z-0 px-6 py-12 space-y-4 sm:py-16 sm:space-y-8 md:py-18 lg:py-24 lg:px-12">
+                        <p className="text-current/60 font-medium lg:text-lg max-w-prose">
+                            Ideal para desarrolladores que buscan construir vivienda
+                            en una zona con expansión natural de la ciudad.
+                        </p>
+                        <ul className="max-w-2/3 list-disc list-inside sm:text-lg lg:text-xl">
+                            <li>88,283 m<sup>2</sup></li>
+                            <li>Ubicación estratégica</li>
+                            <li>Uso de suelo habitacional</li>
+                            <li>Agua, drenaje y electricidad a pie del predio</li>
+                            <li>Autorizado para desarrollo de vivienda</li>
+                        </ul>
+                        <p className="absolute left-8 -bottom-4 z-10 bg-neutral-950 border-3 border-green-500 rounded-lg font-bold uppercase px-6 py-1 sm:-bottom-6 sm:text-lg lg:text-xl lg:px-6 lg:py-2.5">
+                            Sobre el predio
+                        </p>
+                    </div>
+                    <div className="absolute z-10 -bottom-5 -right-1/4 xs:-right-1/8 sm:-right-4 lg:right-0 lg:-bottom-10">
+                        <Image className="w-auto h-72 lg:h-120" src={truckImg} alt="alt" width={1024} height={1024} />
+                    </div>
+                    <hr className="border-t-6" />
+                </div>
+                <div className="bg-sky-900 py-4"></div>
+            </section>
+            <section className="relative px-2 lg:px-4">
+                <Image className="absolute inset-y-0 -left-2 z-0 w-auto h-full" src={engineerImg} alt="alt" width={720} height={1292} />
+                <div className="relative z-0 w-2/3 font-black space-y-1.5 ml-auto sm:space-y-4 lg:pt-12 lg:pb-4">
+                    <div className="space-y-1.5">
+                        <h2 className="text-2xl text-center -ml-2 2xs:text-nowrap sm:text-3xl lg:text-4xl">Contactanos y Aprovecha</h2>
+                        <p className="text-6xl text-center uppercase sm:text-7xl lg:text-9xl">Precio</p>
+                    </div>
+                    <div className="flex justify-between gap-3 bg-green-500 px-0 py-1.5 sm:py-2 lg:py-4 lg:pr-4">
+                        <div className="basis-1/5 bg-sky-900 lg:basis-1/3">&nbsp;</div>
+                        <p className="text-2xl text-end px-4 xs:text-3xl sm:text-4xl lg:text-5xl">$500.00 MXN/M<sup>2</sup></p>
+                    </div>
+                    <div className="relative z-0 py-1 sm:py-2">
+                        <div className="absolute z-0 inset-y-0 left-0 min-w-1/3 bg-background">
+                            &nbsp;
+                        </div>
+                        <Image className="relative z-10" width={1600} height={900} src="/img1.webp" alt="alt" />
+                    </div>
+                </div>
+            </section>
+            <section className="flex items-center justify-between bg-neutral-100">
+                <p className="relative text-foreground uppercase px-6 py-2 leading-tight xs:pr-8 sm:text-lg sm:py-4 lg:text-xl lg:px-12">Oportunidad para desarrollo habitacional en Mazatlán</p>
+                <div className="relative bg-green-500 px-6 py-2 sm:py-4">
+                    <div className="absolute z-0 -left-2.5 inset-y-0 w-10 bg-green-500 skew-x-12">&nbsp;</div>
+                    <p className="flex flex-col relative z-10 text-center text-lg font-black uppercase leading-tight sm:text-xl md:text-2xl">
+                        <span>Detalles</span>
+                        <span className="text-base tracking-tighter md:text-lg">adicionales</span>
+                    </p>
+                </div>
+            </section>
+            <section>
+                <Image src="/img2.webp" alt="alt" width={1600} height={900} />
+                <Image src="/img3.webp" alt="alt" width={1600} height={900} />
+            </section>
+            <section className="relative z-0">
+                <div className="absolute z-0 inset-0">
+                    <Image className="absolute z-0 h-full min-w-full object-cover" src="/img7.webp" alt="alt" width={1600} height={848} />
+                    <div className="absolute inset-0 z-10 w-1/2 bg-sky-950 border-r-16 border-green-500">
+                    </div>
+                </div>
+                <div className="relative z-10 pt-24 pb-6 space-y-24 lg:pt-32 lg:pb-16 lg:space-y-32">
+                    <div className="w-4/5 bg-green-500/90 font-black py-8 px-6 rounded-e-lg sm:px-8 sm:py-12 lg:text-3xl lg:px-12">
+                        <h3>Zona con crecimiento urbano.</h3>
+                        <p>Cercanía con escuelas, transporte público y áreas comerciales.</p>
+                    </div>
+                    <div className="px-6 sm:px-2 lg:px-12">
+                        <ul className="grid grid-cols-2 grid-rows-2 items-center gap-4 bg-background rounded-lg text-foreground p-6 mx-auto sm:grid-cols-4 sm:grid-rows-1 sm:rounded-full lg:px-12">
+                            {
+                                features.map(ft => (
+                                    <li className="flex flex-col gap-3 items-center" key={ft.title}>
+                                        <Image className="size-16" src={ft.icon} alt="alt" width={900} height={900} />
+                                        <p className="text-center font-black uppercase">{ft.title}</p>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section className="relative z-0">
+                <div className="absolute inset-0 z-0">
+                    <Image className="brightness-60" src="/img4.webp" alt="alt" width={1600} height={900} />
+                </div>
+                <div className="relative z-10 py-12 px-6 space-y-2 pb-20 xs:space-y-4 lg:px-12">
+                    <div className="w-fit bg-green-600 text-background rounded lg:px-2 lg:py-1">
+                        <p className="font-bold px-2 py-0.5 sm:text-lg lg:text-xl">Facilidad para gestión de proyectos.</p>
+                    </div>
+                    <h2 className="text-2xl font-bold w-3/5 sm:w-4/5 sm:text-3xl lg:text-4xl" style={{ textShadow: "2px 2px 6px rgb(0,0,0)" }}>
+                        Zona en expansión con demanda de vivienda en Mazatlán.
+                    </h2>
+                </div>
+                <div className="absolute -bottom-16 right-2 z-10 sm:-bottom-40 md:-bottom-60 lg:-bottom-96">
+                    <div className="size-48 rounded-full overflow-hidden outline-10 outline-sky-800 md:size-60 lg:size-96">
+                        <Image className="" src="/img5.webp" alt="alt" width={1200} height={1600} />
+                    </div>
+                    <div className="absolute z-10 -bottom-1/4 left-1/2 -translate-x-1/2 rotate-3 lg:left-2/5">
+                        <div className="size-26 rounded-full bg-green-600 md:size-30 lg:size-auto lg:aspect-square lg:p-10">
+                            <p className="w-full h-full flex flex-col items-center justify-center md:text-lg lg:text-4xl">
+                                <span>A sólo</span>
+                                <span>$500</span>
+                                <span>/Metro<sup>2</sup></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-background pt-32" id="ubicacion">
+                <LocationMap
+                    className="w-full h-[50dvh] lg:h-auto lg:aspect-square"
+                />
+            </section>
+            <section className="relative z-0 bg-background py-18 px-6 overflow-hidden md:px-12 md:py-24" id="contacto">
+                <div className="absolute inset-0 z-0 bg-sky-950 w-1/3">
+                    <div className="absolute bottom-8 -left-1 aspect-square">
+                        <DottedSquare
+                            dotHeight={12}
+                            dotWidth={4}
+                            dotClassName="bg-background"
+                        />
+                    </div>
+                </div>
+                <div className="absolute z-10 top-4 right-4">
+                    <DottedSquare size={6} />
+                </div>
+                <div className="relative z-10 bg-foreground rounded-lg p-6 m-auto space-y-3 xs:py-8 sm:py-12 sm:space-y-6 lg:w-2xl lg:space-y-12">
+                    <h2 className="text-3xl uppercase sm:text-4xl sm:px-4 md:px-8">Contacto</h2>
+                    <ul className="*:not-first:py-3 *:first:pb-3 xs:*:px-2 sm:text-lg sm:*:not-first:py-4 sm:*:first:pb-4 sm:*:px-4 sm:*:px-8">
+                        <li className="flex items-center gap-4 border-b-2 border-dashed border-background">
+                            <div className="grow-0 shrink-0 text-green-500">
+                                <MapPin className="size-8" />
+                            </div>
+                            <p className="text-background/80">C. Cancer #132. Fracc. Sahop, 34190 Durango, Dgo.</p>
+                        </li>
+                        <li className="flex items-center gap-4 border-b-2 border-dashed border-background">
+                            <div className="grow-0 shrink-0 text-green-500">
+                                <Phone className="size-8" />
+                            </div>
+                            <p className="flex flex-col text-background/80">
+                                <span>C. Claudia Bertha P. González</span>
+                                <span>+52 669 224 4798</span>
+                            </p>
+                        </li>
+                        <li className="flex items-center gap-4 border-b-2 border-dashed border-background">
+                            <div className="grow-0 shrink-0 text-green-500">
+                                <Phone className="size-8" />
+                            </div>
+                            <p className="flex flex-col text-background/80">
+                                <span>Ing. José Flores Hernández</span>
+                                <span>+52 618 838 1744</span>
+                            </p>
+                        </li>
+                        <li className="flex items-center gap-4 border-b-2 border-dashed border-background">
+                            <div className="grow-0 shrink-0 text-green-500">
+                                <Mail className="size-8" />
+                            </div>
+                            <p className="text-background/80">sibramx.business@gmail.com</p>
+                        </li>
+                    </ul>
+                    <div className="absolute bottom-4 -right-2 z-10 grid grid-cols-1 grid-rows-1 lg:bottom-0 lg:right-0 lg:translate-1/2">
+                        <MessageCircleMore className="relative -left-7 -top-7 z-0 col-start-1 row-start-1 size-16 fill-emerald-800 scale-x-[-1] sm:size-24" />
+                        <MessageCircleMore className="relative z-10 col-start-1 row-start-1 size-16 fill-green-500 sm:size-24" />
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
 }
