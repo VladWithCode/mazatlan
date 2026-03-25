@@ -94,7 +94,10 @@ export default function Home() {
                 <div className="relative z-0">
                     <div className="relative">
                         <Image
-                            className="animate-fadein" src="/img6.webp" alt="alt" width={1600} height={900}
+                            className="xl:w-full animate-fadein"
+                            src="/img6.webp"
+                            alt="alt"
+                            width={1600} height={900}
                             data-animate="fadein"
                         />
                         <div className="absolute inset-x-0 -bottom-10 z-10 max-w-7xl mx-auto px-6 xs:-bottom-12 sm:-bottom-14 md:-bottom-16 lg:-bottom-18 lg:px-12">
@@ -161,8 +164,8 @@ export default function Home() {
                 </div>
             </section>
             <section>
-                <Image className="animate-fadein" src="/img2.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
-                <Image className="animate-fadein" src="/img3.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
+                <Image className="xl:w-full animate-fadein" src="/img2.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
+                <Image className="xl:w-full animate-fadein" src="/img3.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
             </section>
             <section className="relative z-0">
                 <div className="absolute z-0 inset-0">
@@ -170,8 +173,8 @@ export default function Home() {
                     <div className="absolute inset-0 z-10 w-1/2 bg-sky-950 border-r-16 border-green-500">
                     </div>
                 </div>
-                <div className="relative z-10 pt-24 pb-6 space-y-24 lg:pt-32 lg:pb-16 lg:space-y-32">
-                    <div className="w-4/5 bg-green-500/90 font-black py-8 px-6 rounded-e-lg sm:px-8 sm:py-12 lg:text-3xl lg:px-12 xl:pl-40">
+                <div className="relative z-10 pt-24 pb-6 space-y-24 lg:pt-32 lg:pb-16 lg:space-y-32 xl:pt-52 xl:pb-24 xl:space-y-64">
+                    <div className="w-4/5 bg-green-500/90 font-black py-8 px-6 rounded-e-lg sm:px-8 sm:py-12 lg:text-3xl lg:px-12 xl:pl-40 xl:w-3/5">
                         <h3>Zona con crecimiento urbano.</h3>
                         <p>Cercanía con escuelas, transporte público y áreas comerciales.</p>
                     </div>
@@ -191,16 +194,16 @@ export default function Home() {
             </section>
             <section className="relative z-0">
                 <div className="absolute inset-0 z-0">
-                    <Image className="brightness-60" src="/img4.webp" alt="alt" width={1600} height={900} />
+                    <Image className="brightness-60 object-cover h-full w-auto md:max-h-full md:w-full" src="/img4.webp" alt="alt" width={1600} height={900} />
                 </div>
-                <div className="relative z-10 max-w-7xl py-12 px-6 mx-auto space-y-2 pb-20 xs:space-y-4 lg:px-12">
+                <div className="relative z-10 max-w-7xl py-12 px-6 mx-auto space-y-2 pb-20 xs:space-y-4 lg:px-12 md:pb-60 xl:pb-120">
                     <div className="w-fit bg-green-600 text-background rounded lg:px-2 lg:py-1">
                         <p className="font-bold px-2 py-0.5 sm:text-lg lg:text-xl">Facilidad para gestión de proyectos.</p>
                     </div>
                     <h2 className="text-2xl font-bold w-3/5 sm:w-4/5 sm:text-3xl lg:text-4xl" style={{ textShadow: "2px 2px 6px rgb(0,0,0)" }}>
                         Zona en expansión con demanda de vivienda en Mazatlán.
                     </h2>
-                    <div className="absolute -bottom-16 right-2 z-10 sm:-bottom-40 md:-bottom-60 lg:-bottom-96 xl:-bottom-140">
+                    <div className="absolute -bottom-16 right-2 z-10 sm:-bottom-40">
                         <div className="size-48 rounded-full overflow-hidden outline-10 outline-sky-800 md:size-60 lg:size-96 animate-scale" data-animate="scale">
                             <Image src="/img5.webp" alt="alt" width={1200} height={1600} />
                         </div>
@@ -216,7 +219,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="bg-background pt-32" id="ubicacion">
+            <section className="bg-background pt-24 xl:p-0" id="ubicacion">
                 <LocationMap
                     className="w-full h-[50dvh] lg:h-auto lg:aspect-square xl:aspect-auto xl:h-dvh"
                 />
