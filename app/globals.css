@@ -146,6 +146,24 @@
     .animate-scale {
         @apply opacity-0 scale-80;
     }
+
+    .scroll-indicator {
+        animation-name: scroll-indicator;
+        animation-duration: 0.5s;
+        aniite-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes scroll-indicator {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-0.25rem);
+        }
+    }
 }
 
 @theme {

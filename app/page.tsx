@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { features } from "./contents";
 import { LocationMap } from "./_components/maps/location_map";
-import { Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
+import { ChevronDown, Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
 import { DottedSquare } from "./_components/layout/dottedSquare";
 
 import truckImg from "@/app/_assets/truck.webp";
@@ -13,6 +13,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { animations } from "./animations";
+import { Button } from "./_components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,16 +62,16 @@ export default function Home() {
 
     return (
         <main className="bg-sky-900 text-background" id="inicio" ref={containerRef}>
-            <section className="relative z-0 overflow-hidden">
+            <section className="relative z-0 max-h-screen overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <Image src="/img5.webp" alt="alt" height={1600} width={1200} />
+                    <Image className="object-center object-cover xl:w-full" src="/img5.webp" alt="alt" height={1600} width={1200} />
                 </div>
                 <div
                     className="absolute inset-0 z-10 h-full w-full bg-linear-to-r from-sky-500 from-25% via-sky-500/60 via-80% to-sky-500/0 to-100% animate-fadein"
                     data-animate="fadein"
                 >
                 </div>
-                <div className="relative z-20 aspect-3/4 px-6 py-24 space-y-8 -rotate-2 xs:px-12 xs:space-y-8 sm:px-16 sm:py-32 md:py-40 md:space-y-12 lg:px-24 lg:pt-72 lg:pb-120 lg:aspect-auto">
+                <div className="relative z-20 aspect-3/4 max-w-7xl xl:aspect-auto px-6 py-24 space-y-8 -rotate-2 mx-auto xs:px-12 xs:space-y-8 sm:px-16 sm:py-32 md:py-40 md:space-y-12 lg:px-24 lg:pt-72 lg:pb-120 lg:aspect-auto">
                     <h1 className="flex flex-col gap-2 text-background text-5xl xs:text-6xl uppercase font-bold lg:max-w-[75%] animate-slide" data-animate="slideY">
                         <span>Construye tu proximo desarrollo</span>
                         <span className="text-xl font-bold uppercase bg-blue-950 mx-auto px-2 py-px xs:text-2xl">en este terreno</span>
@@ -81,6 +82,13 @@ export default function Home() {
                         de Mazatlán, Sinaloa.
                     </p>
                 </div>
+                <div className="absolute inset-x-0 bottom-2 z-20 flex items-center justify-center">
+                    <Button
+                        onClick={() => window.scrollBy({ top: window.innerHeight })}
+                        variant="ghost">
+                        <ChevronDown className="size-6 sm:size-10 scroll-indicator" />
+                    </Button>
+                </div>
             </section>
             <section className="bg-linear-to-b from-slate-950/0 to-slate-950 overflow-hidden">
                 <div className="relative z-0">
@@ -89,14 +97,14 @@ export default function Home() {
                             className="animate-fadein" src="/img6.webp" alt="alt" width={1600} height={900}
                             data-animate="fadein"
                         />
-                        <div className="absolute -bottom-10 z-10 px-6 xs:-bottom-12 sm:-bottom-14 md:-bottom-16 lg:-bottom-18 lg:px-12">
+                        <div className="absolute inset-x-0 -bottom-10 z-10 max-w-7xl mx-auto px-6 xs:-bottom-12 sm:-bottom-14 md:-bottom-16 lg:-bottom-18 lg:px-12">
                             <h2 className="flex flex-col text-3xl font-black uppercase text-border leading-tight xs:text-4xl sm:text-5xl lg:text-6xl">
                                 <span className="text-green-500 animate-slide" data-animate="slideY">Información</span>
                                 <span className="text-neutral-50 animate-slide" data-animate="slideY">general</span>
                             </h2>
                         </div>
                     </div>
-                    <div className="relative z-0 px-6 py-12 space-y-4 sm:py-16 sm:space-y-8 md:py-18 lg:py-24 lg:px-12">
+                    <div className="relative z-0 max-w-7xl mx-auto px-6 py-12 space-y-4 sm:py-16 sm:space-y-8 md:py-18 lg:py-24 lg:px-12">
                         <p className="text-current/60 font-medium lg:text-lg max-w-prose animate-slide" data-animate="slideY">
                             Ideal para desarrolladores que buscan construir vivienda
                             en una zona con expansión natural de la ciudad.
@@ -111,15 +119,15 @@ export default function Home() {
                         <p className="absolute left-8 -bottom-4 z-10 bg-neutral-950 border-3 border-green-500 rounded-lg font-bold uppercase px-6 py-1 sm:-bottom-6 sm:text-lg lg:text-xl lg:px-6 lg:py-2.5 animate-slide-right" data-animate="slideX">
                             Sobre el predio
                         </p>
-                    </div>
-                    <div className="absolute z-10 -bottom-5 -right-1/4 xs:-right-1/8 sm:-right-4 lg:right-0 lg:-bottom-10">
-                        <Image className="w-auto h-72 lg:h-120 animate-slide-left" src={truckImg} alt="alt" width={1024} height={1024} data-animate="slideX" />
+                        <div className="absolute z-10 -bottom-5 -right-1/4 xs:-right-1/8 sm:-right-4 lg:right-0 lg:-bottom-10">
+                            <Image className="w-auto h-72 lg:h-120 animate-slide-left" src={truckImg} alt="alt" width={1024} height={1024} data-animate="slideX" />
+                        </div>
                     </div>
                     <hr className="border-t-6" />
                 </div>
                 <div className="bg-sky-900 py-4"></div>
             </section>
-            <section className="relative px-2 lg:px-4">
+            <section className="relative max-w-7xl mx-auto px-2 lg:px-4">
                 <Image className="absolute inset-y-0 -left-2 z-0 w-auto h-full animate-fadein" src={engineerImg} alt="alt" width={720} height={1292} data-animate="fadein" />
                 <div className="relative z-0 w-2/3 font-black space-y-1.5 ml-auto sm:space-y-4 lg:pt-12 lg:pb-4">
                     <div className="space-y-1.5 animate-slide" data-animate="slideY">
@@ -138,14 +146,18 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="flex items-center justify-between bg-neutral-100">
-                <p className="relative text-foreground uppercase px-6 py-2 leading-tight xs:pr-8 sm:text-lg sm:py-4 lg:text-xl lg:px-12 animate-slide-right" data-animate="slideX">Oportunidad para desarrollo habitacional en Mazatlán</p>
-                <div className="relative bg-green-500 px-6 py-2 sm:py-4 animate-slide-left" data-animate="slideX">
-                    <div className="absolute z-0 -left-2.5 inset-y-0 w-10 bg-green-500 skew-x-12">&nbsp;</div>
-                    <p className="flex flex-col relative z-10 text-center text-lg font-black uppercase leading-tight sm:text-xl md:text-2xl">
-                        <span>Detalles</span>
-                        <span className="text-base tracking-tighter md:text-lg">adicionales</span>
-                    </p>
+            <section className="relative bg-neutral-100">
+                <div className="relative z-10 max-w-7xl flex items-center justify-between mx-auto">
+                    <p className="relative text-foreground uppercase px-6 py-2 leading-tight xs:pr-8 sm:text-lg sm:py-4 lg:text-xl lg:px-12 animate-slide-right" data-animate="slideX">Oportunidad para desarrollo habitacional en Mazatlán</p>
+                    <div className="relative bg-green-500 px-6 py-2 sm:py-4 animate-slide-left" data-animate="slideX">
+                        <div className="absolute z-0 -left-2.5 inset-y-0 w-10 bg-green-500 skew-x-12">&nbsp;</div>
+                        <p className="flex flex-col relative z-10 text-center xl:text-left text-lg font-black uppercase leading-tight sm:text-xl md:text-2xl">
+                            <span>Detalles</span>
+                            <span className="text-base tracking-tighter md:text-lg">adicionales</span>
+                        </p>
+                    </div>
+                </div>
+                <div className="absolute inset-y-0 right-0 w-1/6 bg-green-500">
                 </div>
             </section>
             <section>
@@ -159,11 +171,11 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="relative z-10 pt-24 pb-6 space-y-24 lg:pt-32 lg:pb-16 lg:space-y-32">
-                    <div className="w-4/5 bg-green-500/90 font-black py-8 px-6 rounded-e-lg sm:px-8 sm:py-12 lg:text-3xl lg:px-12">
+                    <div className="w-4/5 bg-green-500/90 font-black py-8 px-6 rounded-e-lg sm:px-8 sm:py-12 lg:text-3xl lg:px-12 xl:pl-40">
                         <h3>Zona con crecimiento urbano.</h3>
                         <p>Cercanía con escuelas, transporte público y áreas comerciales.</p>
                     </div>
-                    <div className="px-6 sm:px-2 lg:px-12">
+                    <div className="max-w-7xl px-6 mx-auto sm:px-2 lg:px-12">
                         <ul className="grid grid-cols-2 grid-rows-2 items-center gap-4 bg-background rounded-lg text-foreground p-6 mx-auto sm:grid-cols-4 sm:grid-rows-1 sm:rounded-full lg:px-12">
                             {
                                 features.map(ft => (
@@ -181,32 +193,32 @@ export default function Home() {
                 <div className="absolute inset-0 z-0">
                     <Image className="brightness-60" src="/img4.webp" alt="alt" width={1600} height={900} />
                 </div>
-                <div className="relative z-10 py-12 px-6 space-y-2 pb-20 xs:space-y-4 lg:px-12">
+                <div className="relative z-10 max-w-7xl py-12 px-6 mx-auto space-y-2 pb-20 xs:space-y-4 lg:px-12">
                     <div className="w-fit bg-green-600 text-background rounded lg:px-2 lg:py-1">
                         <p className="font-bold px-2 py-0.5 sm:text-lg lg:text-xl">Facilidad para gestión de proyectos.</p>
                     </div>
                     <h2 className="text-2xl font-bold w-3/5 sm:w-4/5 sm:text-3xl lg:text-4xl" style={{ textShadow: "2px 2px 6px rgb(0,0,0)" }}>
                         Zona en expansión con demanda de vivienda en Mazatlán.
                     </h2>
-                </div>
-                <div className="absolute -bottom-16 right-2 z-10 sm:-bottom-40 md:-bottom-60 lg:-bottom-96">
-                    <div className="size-48 rounded-full overflow-hidden outline-10 outline-sky-800 md:size-60 lg:size-96 animate-scale" data-animate="scale">
-                        <Image src="/img5.webp" alt="alt" width={1200} height={1600} />
-                    </div>
-                    <div className="absolute z-10 -bottom-1/4 left-1/2 -translate-x-1/2 rotate-3 lg:left-2/5 animate-scale" data-animate="scale">
-                        <div className="size-26 rounded-full bg-green-600 md:size-30 lg:size-auto lg:aspect-square lg:p-10">
-                            <p className="w-full h-full flex flex-col items-center justify-center md:text-lg lg:text-4xl">
-                                <span>A sólo</span>
-                                <span>$500</span>
-                                <span>/Metro<sup>2</sup></span>
-                            </p>
+                    <div className="absolute -bottom-16 right-2 z-10 sm:-bottom-40 md:-bottom-60 lg:-bottom-96 xl:-bottom-140">
+                        <div className="size-48 rounded-full overflow-hidden outline-10 outline-sky-800 md:size-60 lg:size-96 animate-scale" data-animate="scale">
+                            <Image src="/img5.webp" alt="alt" width={1200} height={1600} />
+                        </div>
+                        <div className="absolute z-10 -bottom-1/4 left-1/2 -translate-x-1/2 rotate-3 lg:left-2/5 animate-scale" data-animate="scale">
+                            <div className="size-26 rounded-full bg-green-600 md:size-30 lg:size-auto lg:aspect-square lg:p-10">
+                                <p className="w-full h-full flex flex-col items-center justify-center md:text-lg lg:text-4xl">
+                                    <span>A sólo</span>
+                                    <span>$500</span>
+                                    <span>/Metro<sup>2</sup></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="bg-background pt-32" id="ubicacion">
                 <LocationMap
-                    className="w-full h-[50dvh] lg:h-auto lg:aspect-square"
+                    className="w-full h-[50dvh] lg:h-auto lg:aspect-square xl:aspect-auto xl:h-dvh"
                 />
             </section>
             <section className="relative z-0 bg-background py-18 px-6 overflow-hidden md:px-12 md:py-24" id="contacto">
