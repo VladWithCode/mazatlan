@@ -53,9 +53,9 @@ export function ContactForm() {
                     </div>
 
                     <DialogHeader>
-                        <DialogTitle>Solicitar escrituras</DialogTitle>
+                        <DialogTitle>Quiero comprar estas hectáreas</DialogTitle>
                         <DialogDescription>
-                            Ingresa tus datos y nos pondremos en contacto para agendar tu cita.
+                            Ingresa tus datos y nos pondremos en contacto contigo.
                         </DialogDescription>
                     </DialogHeader>
                     <FieldGroup>
