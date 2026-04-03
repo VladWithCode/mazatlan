@@ -5,6 +5,7 @@ import { features } from "./contents";
 import { LocationMap } from "./_components/maps/location_map";
 import { ChevronDown, Mail, MapPin, MessageCircleMore, Phone } from "lucide-react";
 import { DottedSquare } from "./_components/layout/dottedSquare";
+import { PublicImage } from "./_components/ui/publicImage";
 
 import truckImg from "@/app/_assets/truck.webp";
 import engineerImg from "@/app/_assets/engineer.webp";
@@ -14,6 +15,7 @@ import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { animations } from "./animations";
 import { Button } from "./_components/ui/button";
+import { ContactForm } from "./_components/ContactForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,7 +66,7 @@ export default function Home() {
         <main className="bg-sky-900 text-background" id="inicio" ref={containerRef}>
             <section className="relative z-0 max-h-screen overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <Image className="object-center object-cover xl:w-full" src="/img5.webp" alt="alt" height={1600} width={1200} />
+                    <PublicImage className="object-center object-cover xl:w-full" src="/img5.webp" alt="alt" height={1600} width={1200} />
                 </div>
                 <div
                     className="absolute inset-0 z-10 h-full w-full bg-linear-to-r from-sky-500 from-25% via-sky-500/60 via-80% to-sky-500/0 to-100% animate-fadein"
@@ -93,7 +95,7 @@ export default function Home() {
             <section className="bg-linear-to-b from-slate-950/0 to-slate-950 overflow-hidden">
                 <div className="relative z-0">
                     <div className="relative">
-                        <Image
+                        <PublicImage
                             className="xl:w-full animate-fadein"
                             src="/img6.webp"
                             alt="alt"
@@ -145,7 +147,7 @@ export default function Home() {
                         <div className="absolute z-0 inset-y-0 left-0 min-w-1/3 bg-background">
                             &nbsp;
                         </div>
-                        <Image className="relative z-10" width={1600} height={900} src="/img1.webp" alt="alt" />
+                        <PublicImage className="relative z-10" width={1600} height={900} src="/img1.webp" alt="alt" />
                     </div>
                 </div>
             </section>
@@ -164,12 +166,12 @@ export default function Home() {
                 </div>
             </section>
             <section>
-                <Image className="xl:w-full animate-fadein" src="/img2.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
-                <Image className="xl:w-full animate-fadein" src="/img3.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
+                <PublicImage className="xl:w-full animate-fadein" src="/img2.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
+                <PublicImage className="xl:w-full animate-fadein" src="/img3.webp" alt="alt" width={1600} height={900} data-animate="fadein" />
             </section>
             <section className="relative z-0">
                 <div className="absolute z-0 inset-0">
-                    <Image className="absolute z-0 h-full min-w-full object-cover" src="/img7.webp" alt="alt" width={1600} height={848} />
+                    <PublicImage className="absolute z-0 h-full min-w-full object-cover" src="/img7.webp" alt="alt" width={1600} height={848} />
                     <div className="absolute inset-0 z-10 w-1/2 bg-sky-950 border-r-16 border-green-500">
                     </div>
                 </div>
@@ -194,7 +196,7 @@ export default function Home() {
             </section>
             <section className="relative z-0">
                 <div className="absolute inset-0 z-0">
-                    <Image className="brightness-60 object-cover h-full w-auto md:max-h-full md:w-full" src="/img4.webp" alt="alt" width={1600} height={900} />
+                    <PublicImage className="brightness-60 object-cover h-full w-auto md:max-h-full md:w-full" src="/img4.webp" alt="alt" width={1600} height={900} />
                 </div>
                 <div className="relative z-10 max-w-7xl py-12 px-6 mx-auto space-y-2 pb-20 xs:space-y-4 lg:px-12 md:pb-60 xl:pb-120">
                     <div className="w-fit bg-green-600 text-background rounded lg:px-2 lg:py-1">
@@ -205,7 +207,7 @@ export default function Home() {
                     </h2>
                     <div className="absolute -bottom-16 right-2 z-10 sm:-bottom-40">
                         <div className="size-48 rounded-full overflow-hidden outline-10 outline-sky-800 md:size-60 lg:size-96 animate-scale" data-animate="scale">
-                            <Image src="/img5.webp" alt="alt" width={1200} height={1600} />
+                            <PublicImage src="/img5.webp" alt="alt" width={1200} height={1600} />
                         </div>
                         <div className="absolute z-10 -bottom-1/4 left-1/2 -translate-x-1/2 rotate-3 lg:left-2/5 animate-scale" data-animate="scale">
                             <div className="size-26 rounded-full bg-green-600 md:size-30 lg:size-auto lg:aspect-square lg:p-10">
@@ -271,6 +273,7 @@ export default function Home() {
                             <p className="text-background/80">sibramx.business@gmail.com</p>
                         </li>
                     </ul>
+                    <ContactForm />
                     <div className="absolute bottom-0 right-0 z-10 grid grid-cols-1 grid-rows-1 translate-1/2 animate-scale" data-animate="scale">
                         <MessageCircleMore className="relative -left-7 -top-7 z-0 col-start-1 row-start-1 size-16 fill-emerald-800 scale-x-[-1] sm:size-24" />
                         <MessageCircleMore className="relative z-10 col-start-1 row-start-1 size-16 fill-green-500 sm:size-24" />
